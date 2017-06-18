@@ -2,13 +2,18 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import numpy as np
 import struct
+import sys
 import time
 
 
-loc = raw_input("img location : ")
-loc = '/Users/HID/Desktop/img-html/'+loc
+loc = raw_input("img file name : ")
+loc = './test-images/'+loc
 
-img=mpimg.imread(loc)
+try:
+	img=mpimg.imread(loc)
+except:
+	print "there is no file"
+	sys.exit()
 
 f = open("output.html", 'w')
 f.write("<html>\n")
@@ -44,3 +49,5 @@ for i in img:
 f.write("</table>\n")
 f.write("</html>")
 f.close()
+
+print "successful"
