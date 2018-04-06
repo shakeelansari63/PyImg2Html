@@ -7,13 +7,13 @@ import sys
 import time
 
 
-loc = raw_input("img file name : ")
+loc = input("img file name : ")
 loc = './test-images/'+loc
 
 try:
 	img=mpimg.imread(loc)
 except:
-	print "there is no file"
+	print("there is no file")
 	sys.exit()
 
 f = open("output.html", 'w')
@@ -51,4 +51,4 @@ f.write("</table>\n")
 f.write("</html>")
 f.close()
 
-print "successful"
+print("successful")
